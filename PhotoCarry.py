@@ -10,14 +10,14 @@ from openpyxl.drawing.image import Image
 import tkinter as tk
 from tkinter import filedialog
 
+"""This program is to certain pull photos from a selected pool according to excel sheet.
+Photos will be copied to a directory of your choice, and will be seperated to different 
+folders with sheet names."""
+
 print(" "* 2900)
 print("Welcome to PhotoCarry") 
 print("This program is written for the purpose of copying photos")
 print("from a pool to a directory according to an excelfile") 
-print("        ")
-print("Feel free to use and share.")
-print("Made by Cihan Andac")
-print(" "* 1000)
 print("You will be asked to choose the pool directory  first and then")
 print("the excel file. Lastly the location of the new directory.")
 print(" "* 900)
@@ -43,7 +43,7 @@ sheets = file.sheet_names
 wb = load_workbook(file_path)
 
 
-
+#iterating through the sheets
 for sheet in sheets:
     page=file.parse(sheet)
     lenght, widht = page.shape
@@ -51,6 +51,7 @@ for sheet in sheets:
     ws = wb[sheet]
     path = os.path.join(directory_path, sheet)
     
+    #if a folder with sheet's name exist it will fo nothing, else it will create a new one.
     if sheet in os.listdir(directory_path):
         continue
     else:
@@ -64,9 +65,11 @@ for sheet in sheets:
         
 
         #checking if there is a match
+        #The algorithm for searching the filename is created according the need of the developer.
+         #example of a filename for this algorithm is "ARK_123_4567.jpg" and we want to match with "4567".
         for filename in os.listdir(pool_path):
 
-            
+            #If your photo's name and the cell have the same name simply delete the codes until two lines above the Eureka part.
             first_line=0
             
             for k in range(0,len(filename)):
@@ -84,7 +87,7 @@ for sheet in sheets:
                                 elif second_line ==2:
                                     shm_number = "SHM "+ filename[k+1:j]
                                     
-
+                                    #This means that the photo's name is the same with the cell.
                                     if shm_number == photo_check:
                                         print("Eureka!!")
                                         shutil.copy(pool_path+"/"+filename, store_folder)
