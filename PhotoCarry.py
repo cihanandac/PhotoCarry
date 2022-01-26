@@ -27,14 +27,14 @@ root = tk.Tk()
 root.withdraw()
 
 
-#Where photos are taken 
+#Pop-up that asks from where the  photos are taken 
 pool_path = filedialog.askdirectory(title="Choose the location of the photo pool")
 
-#Where the Excel file is
+#pop-up that asks where the excel file is.
 file_path = filedialog.askopenfilename(title="Choose the excel file")
 print(file_path)
 
-#Where it will be stored
+#Pop-up that asks Where it will be stored
 directory_path = filedialog.askdirectory(title="Choose the directory where the photos will be copied to")
 
 file = panda.ExcelFile(file_path)
