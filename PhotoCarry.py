@@ -10,7 +10,7 @@ from openpyxl.drawing.image import Image
 import tkinter as tk
 from tkinter import filedialog
 
-"""This program is to certain pull photos from a selected pool according to excel sheet.
+"""This program is to pull certain  photos from a selected pool according to excel sheet.
 Photos will be copied to a directory of your choice, and will be seperated to different 
 folders with sheet names."""
 
