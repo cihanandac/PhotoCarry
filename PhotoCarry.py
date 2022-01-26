@@ -14,7 +14,7 @@ from tkinter import filedialog
 Photos will be copied to a directory of your choice, and will be seperated to different 
 folders with sheet names."""
 
-print(" "* 2900)
+print(" "* 2700)
 print("Welcome to PhotoCarry") 
 print("This program is written for the purpose of copying photos")
 print("from a pool to a directory according to an excelfile") 
